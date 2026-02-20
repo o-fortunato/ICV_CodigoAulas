@@ -4,7 +4,7 @@
 Em geral, tem-se y=h(x), sem ter uma dependência direta do vetor de entrada/controlo u_c
 
 $$
-\dot{x} = f(x, u_c, $\lambda$) \epsilon
+\dot{x} = f(x, u_c, $\lambda$) \epsilon \\
 y = h(x) + \eta
 $$
 
@@ -26,7 +26,7 @@ De facto, o objetivo final é caracterizar o sistema pelo conhecimento de valore
 - É possível identificar o sistema se e só se o seu modelo (no espaço de estado) for observável. (VER APONTAMENTOS DVS)
 
 $$
-\dot{x} = f(x, u, \lambda)
+\dot{x} = f(x, u, \lambda) \\
 \dot{\lambda} = 0
 y = h(x)
 $$
@@ -46,7 +46,7 @@ Implica que $y = x + \eta$
 
 Considerando  padrão do modelo da Dinâmica do Voo, temos
 $$
-\dot{x} = A(\lambda)x + B(\lambda)u_c + \epsilon
+\dot{x} = A(\lambda)x + B(\lambda)u_c + \epsilon \\
 y = x + \eta
 $$
 
