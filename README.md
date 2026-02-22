@@ -51,12 +51,10 @@ Implica que $y = x + \eta$
 ### Identificação de Modelo de Dinâmica de Voo
 
 Considerando  padrão do modelo da Dinâmica do Voo, temos
-$$
-\dot{x} = A(\lambda)x + B(\lambda)u_c + \epsilon
-$$
-$$
-y = x + \eta
-$$
+
+$\dot{x} = A(\lambda)x + B(\lambda)u_c + \epsilon$
+
+$y = x + \eta$
 
 $A(\lambda)$ e $B(\lambda)$ são matrizes cujos elementos dependem do vetor de parâmetros $\lambda$: vetor composto pelas derivadas de estabilidade e de controlo. 
 
