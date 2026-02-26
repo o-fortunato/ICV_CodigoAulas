@@ -25,6 +25,8 @@ if __name__ == "__main__":
     theta = [0.35, 0.36, 0.36, 0.36, 0.36, 0.37, 0.37, 0.37,
              0.37, 0.37, 0.37, 0.37, 0.36, 0.35, 0.33, 0.32]
     
+### EXERCICIO 1
+
     media_u = media(u)
     variancia_u = variancia(u)
     desvio_u = desvio_padrao(u)
@@ -41,7 +43,26 @@ if __name__ == "__main__":
     variancia_theta = variancia(theta)
     desvio_theta = desvio_padrao(theta)
 
-    print(f"u: média={media_u:.2f}, variância={variancia_u:.2f}, desvio padrão={desvio_u:.2f}")
-    print(f"w: média={media_w:.2f}, variância={variancia_w:.2f}, desvio padrão={desvio_w:.2f}")
-    print(f"q: média={media_q:.2f}, variância={variancia_q:.2f}, desvio padrão={desvio_q:.2f}")
-    print(f"theta: média={media_theta:.2f}, variância={variancia_theta:.2f}, desvio padrão={desvio_theta:.2f}")
+    print(f"u: média={media_u:.4f}, variância={variancia_u:.4f}, desvio padrão={desvio_u:.4f}")
+    print(f"w: média={media_w:.4f}, variância={variancia_w:.4f}, desvio padrão={desvio_w:.4f}")
+    print(f"q: média={media_q:.4f}, variância={variancia_q:.4f}, desvio padrão={desvio_q:.4f}")
+    print(f"theta: média={media_theta:.4f}, variância={variancia_theta:.4f}, desvio padrão={desvio_theta:.4f}")
+
+    ### EXERCICIO 2
+    cov_uw = np.cov(u, w)
+
+    print(f"Covariância entre u e w:\n{cov_uw}")
+
+    ### EXERCICIO 3
+    
+    x = np.array([u, w, q, theta])
+    cov_x = np.cov(x)
+    print("Matriz de covariância do vetor x= (u w q theta)T:")
+    print(cov_x)
+    ### EXERCICIO 4
+    #Com  base  na  matriz  de  covariância  calculada,  comentar  sobre  a ligação (o relacionamento) entre pares de variáveis durante o período de voo considerado.
+    print("\nComentário sobre o relacionamento entre pares de variáveis:")
+    print("A matriz de covariância mostra que as variáveis u e w têm uma covariância positiva, indicando que tendem a variar juntas.")
+    print("As variáveis u e q têm uma covariância negativa, indicando que quando uma aumenta, a outra tende a diminuir.")
+    print("As variáveis w e theta também apresentam uma covariância negativa, sugerindo um relacionamento inverso.")
+    print("A diagonal da matriz mostra as variâncias de cada variável, indicando o grau de dispersão em torno da média.")
