@@ -6,10 +6,12 @@ def media(lista):
 
 def variancia(lista):
     m = media(lista)
-    return sum((x - m) ** 2 for x in lista) / ( len(lista) - 1 )
+    return sum((x - m) ** 2 for x in lista) / (len(lista) - 1)
 
 def desvio_padrao(lista):
     return math.sqrt(variancia(lista))
+
+# Dados das variáveis de voo
 
 u = [32.15, 33.1, 34.05, 36.18, 38.85, 39.14,
         40.72, 42.83, 44.55, 45.91, 44.87, 44.02,
