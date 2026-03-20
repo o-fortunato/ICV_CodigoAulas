@@ -26,28 +26,28 @@ def variancia(lista):
 def desvio_padrao(lista):
     return m.sqrt(variancia(lista))
 
-cv_u = desvio_padrao(u) / media(u)
-cv_w = desvio_padrao(w) / media(w)
-cv_q = desvio_padrao(q) / media(q)
-cv_theta = desvio_padrao(theta) / media(theta)
+cv_u = media(u) / desvio_padrao(u)
+cv_w = media(w) / desvio_padrao(w)
+cv_q = media(q) / desvio_padrao(q)
+cv_theta = media(theta) / desvio_padrao(theta)
 
-print(f"Coeficiente de variação de x = (u w q theta)T: [{cv_u:.4f}, {cv_w:.4f}, {cv_q:.4f}, {cv_theta:.4f}]\n")
+print(f"Coeficiente de variacao de x = (u w q theta)T: "
+      f"[{cv_u:.4f}, {cv_w:.4f}, {cv_q:.4f}, {cv_theta:.4f}]\n")
 
 #### EXERCICIO 2
 r_theta_q = np.cov(theta, q)[0][1] / (desvio_padrao(theta) * desvio_padrao(q))
-print(f"Coeficiente de correlação entre theta e q: {r_theta_q:.4f}\n")
+print(f"Coeficiente de correlacao entre theta e q: {r_theta_q:.4f}\n")
 
 ### EXERCICIO 3
 x = np.array([u, w, q, theta])
 cov_x = np.cov(x)
 desvioPadrao = np.sqrt(np.diag(cov_x))
 corr_x = cov_x / np.outer(desvioPadrao, desvioPadrao)
-print(f"Matriz de correlação de x = (u w q theta):\n{corr_x}\n")
+print(f"Matriz de correlacao de x = (u w q theta):\n{corr_x}\n")
 
 ### EXERCICIO 5
-#CV_global = sqrt((mean_x_transpose * cov_x * mean_x) / n)
 mean_x = np.array([media(u), media(w), media(q), media(theta)])
 n = len(mean_x)
 cv_global = np.sqrt((np.transpose(mean_x) @ np.linalg.inv(cov_x) @ mean_x) / n)
 
-print(f"Coef de variação global = {cv_global:.4f}")
+print(f"Coef de variacao global = {cv_global:.4f}")
